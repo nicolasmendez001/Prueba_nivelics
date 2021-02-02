@@ -1,1 +1,40 @@
-<p>table works!</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Lista de empleados</h4>
+                <h6 class="card-subtitle"></h6>
+                <div class="table-responsive">
+                    <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nombres y apellidos</th>
+                                <th>Edad</th>
+                                <th>Email</th>
+                                <th>Genero</th>
+                                <th>Telefono</th>
+                                <th>Fecha de registro</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of usuarios; let i = index">
+                                <td>{{i+1}}</td>
+                                <td>{{user.nombres_apellidos}}</td>
+                                <td>{{user.edad}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.genero}}</td>
+                                <td>{{user.telefono}}</td>
+                                <td>{{user.fecha_registro}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip"
+                                        data-original-title="Delete" (click)="deleteUser(user)">delete</button>
+                                </td>
+                            </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -8,6 +8,8 @@ import { PagesModule } from './pages/pages.module';
 import { HomeComponent } from './pages/home/home.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { TransferHttpCacheModule } from '@nguniversal/common';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -22,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     FormsModule,
     PagesModule,
-    BrowserModule.withServerTransition({ appId: 'serverApp' })
+    TransferHttpCacheModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

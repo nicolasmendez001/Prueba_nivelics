@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/Models/Usuario';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
+export class TableComponent {
 
-  constructor() { }
+  @Input() usuarios: Array<Usuario>;
 
-  ngOnInit(): void {
+    deleteUser(user: Usuario){
+    this.usuarios = this.usuarios.filter(item => item !== user);
   }
 
 }
